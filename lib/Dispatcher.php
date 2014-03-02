@@ -78,7 +78,7 @@ class Lib_Dispatcher
 
 		$todaysDate = $this->helper->getTodaysDate();
 		$data = $this->db->validateData($data);
-		$query =  "SELECT mood, count(mood) as countMood FROM data WHERE date = '{$todaysDate}'" . PHP_EOL;
+		$query =  "SELECT mood, count(mood) as countMood FROM data WHERE date >= '{$todaysDate}'" . PHP_EOL;
 		$query .= "GROUP BY mood";
 
 		$result = array();
